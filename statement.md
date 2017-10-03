@@ -35,32 +35,46 @@ This one defines a variable of type `String.() -> Unit`, which is basically a fu
 
 ```kotlin runnable
 val greet: String.() -> Unit = { println("Hello $this") }
-val countChars: String.() -> Unit = { println("Counted chars: %{length()}") }
+val countChars: String.() -> Unit = { println("Counted chars: ${length()}") }
 
 fun main(args: Array<String>){
-    with("tech.io"){
-        greet(this)
-        countChars(this)
-    }
+    val txt = "tech.io"
+
+    greet(this)
+    countChars(this)
 }
 ```
 
-This is essentially all you need to know. As I already mentioned in the beginning, Kotlin's standard library contains methods using this concept, one of which is apply. This one is defined as follows:
+This is essentially all you need to know. As I already mentioned in the beginning, Kotlin's standard library contains methods using this concept, one of which is `apply`. It's defined as follows:
 
-public inline fun <T> T.apply(block: T.() -> Unit): T { block(); return this }
-As we can easily see, it's an extension function to everything literally, and it expects a function literal with a generic receiver of type T, which is run before the receiver is returned to the caller. This little function is actually fantastic as it provides a way to build certain objects very concisely and easily.
+```kotlin
+public inline fun <T> T.apply(block: T.() -> Unit): T {       
+    block()
+    return this 
+}
+```
+As we can easily see, it's an extension function to "everything" literally (generic type `T`), and it expects a function literal with a generic receiver of type `T`, which is executed before the receiver is returned to the caller. This little function is actually fantastic as it provides a way to build certain objects very concisely and easily.
 
-println(StringBuilder("Hello ")
-        .apply {
-            append("Kotliner")
-            append("! ")
-            append("How are you doing?")
-        }.toString())
->> prints "Hello Kotliner! How are you doing?"
-In this example a StringBuilder is created and then theapply method is called on it. As we've seen before, it's possible to call any method of our receiver StringBuilder like append in the above code. Since apply returns the receiver after it completes, a call of toString on the StringBuilder can immediately be performed and the text is printed to the console.
+```kotlin
+data class GuiContainer(var width: Int = 0, var height: Int = 0, var background: String = "red") {
+    fun printMe() = println(this)
+}
 
-Hope this helps! I really like this feature because it gives us so many possibilities. Probably it's one of Kotlin's most important ones :-) If you want to learn about creating DSLs, have a look here. I myself found so many spots in my code, which I could simplify a lot using these receiver-aware functions; Have a look at yours today ;-)
+fun main(args: Array<String>) {
+    val container = GuiContainer().apply {
+        width = 10
+        height = 20
+        background = "blueish"
+        printMe()
+    }
 
-Finally, if you want to read about Kotlin's beautiful features I recommend the book Kotlin in Action to you!
+}
+```
+
+In this example a data class `GuiContainer` is created with default parameters and then the `apply` method is called on it. As we've seen before, it's possible to call any method of our receiver `GuiContainer` like setting its properties and calling the function `printMe` in the end. Since `apply` returns the receiver after it completes, it can directly be assign to a variable. 
+
+I hope this example shows what you can do with function literals with receiver. I really like it because it gives us so many possibilities. Probably it's one of Kotlin's most important ones :-) I myself found so many spots in my code, which I could simplify a lot using these receiver-aware functions, maybe you will, too.
+
+I'd like to promote one of the best technical books I've read so far: Kotlin in Action!
 
 Simon
