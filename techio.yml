@@ -1,4 +1,4 @@
-title: Simple Kotlin Template
+title: Kotlin Function Literal with Receiver
 plan:
-- title: Kotlin Snippet
+- title: Kotlin Function Literal with Receiver
   statement: statement.md
