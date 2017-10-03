@@ -40,8 +40,8 @@ val countChars: String.() -> Unit = { println("Counted chars: ${length}") }
 fun main(args: Array<String>){
     val txt = "tech.io"
 
-    greet(this)
-    countChars(this)
+    greet(txt)
+    countChars(txt)
 }
 ```
 
