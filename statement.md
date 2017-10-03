@@ -27,7 +27,7 @@ As we've seen, function literals can be used as arguments to other functions, wh
 
 ```kotlin
 val greet: String.() -> Unit = { println("Hello $this") }
-val countChars: String.() -> Unit = { println("Counted chars: %{length()}") }
+val countChars: String.() -> Unit = { println("Counted chars: ${length()}") }
 
 ````
 
