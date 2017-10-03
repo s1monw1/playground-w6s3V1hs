@@ -67,7 +67,7 @@ fun main(args: Array<String>) {
         background = "blueish"
         printMe()
     }
-
+    println("after apply: $container")
 }
 ```
 
