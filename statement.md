@@ -84,6 +84,6 @@ In this example a data class `GuiContainer` is created with default parameters a
 
 I hope this example shows what you can do with function literals with receiver. I really like the feature because it gives us so many possibilities in our day-to-day work. Probably it's one of Kotlin's most important ones :-) I myself found quite some spots in my code, which I could simplify a lot using such receiver-aware functions, maybe you will as well.
 
-I'd like to promote one of the best technical books I've read so far: <a target="_blank" href="https://www.amazon.de/gp/product/1617293296/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=1617293296&linkCode=as2&tag=simonwirtzde-21&linkId=a98710bb701f6ee5fe515f1cceea3cca">Kotlin in Action</a><img src="//ir-de.amazon-adsystem.com/e/ir?t=simonwirtzde-21&l=am2&o=3&a=1617293296" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />!
+I'd like to promote one of the best technical books I've read so far: <a target="_blank" href="https://www.amazon.de/gp/product/1617293296/ref=as_li_tl?ie=UTF8&camp=1638&creative=6742&creativeASIN=1617293296&linkCode=as2&tag=simonwirtzde-21&linkId=a98710bb701f6ee5fe515f1cceea3cca">Kotlin in Action.</a><img src="//ir-de.amazon-adsystem.com/e/ir?t=simonwirtzde-21&l=am2&o=3&a=1617293296" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
 Simon
