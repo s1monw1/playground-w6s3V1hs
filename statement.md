@@ -1,5 +1,14 @@
 # Function Literals with Receiver
 
+
+_Disclaimer: My articles are published under 
+<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode" target="_blank">"Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"</a>._
+
+© Copyright: Simon Wirtz, 2017
+https://blog.simon-wirtz.de/function-literals-with-receiver-quick-introduction/
+
+Feel free to share.
+
 Today I want to give a quick introduction to <b>Function Literals with Receiver</b>, also referred to as <b>Lambda with Receiver</b>. This concept is what makes Kotlin great for designing Domain Specific Languages as we know it from Groovy for example. Also, Kotlins standard library includes many functions that many of you may have used or at least read about already: `apply` and `with` are the most prominent ones.
 
 
