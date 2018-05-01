@@ -7,6 +7,7 @@ _Disclaimer: My articles are published under
 © Copyright: Simon Wirtz, 2017
 https://kotlinexpertise.com/function-literals-with-receiver/
 
+
 Feel free to share.
 
 ## Introduction
